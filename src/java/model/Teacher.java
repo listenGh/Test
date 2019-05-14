@@ -16,6 +16,10 @@ public class Teacher {
     String sex;
     String pwd;
     String cId;
+    String courseId;
+
+    public Teacher() {
+    }
 
     public int getId() {
         return id;
@@ -65,21 +69,29 @@ public class Teacher {
         this.cId = cId;
     }
 
-    public Teacher() {
+    public String getCourseId() {
+        return courseId;
     }
 
-    public Teacher(String zid, String name, String sex, String pwd, String cId) {
+    public void setCourseId(String courseId) {
+        this.courseId = courseId;
+    }
+
+    public Teacher(String zid, String name, String sex, String pwd, String cId, String courseId) {
         this.zid = zid;
         this.name = name;
         this.sex = sex;
         this.pwd = pwd;
         this.cId = cId;
+        this.courseId = courseId;
     }
 
     @Override
     public String toString() {
-        return "Teacher{" + "id=" + id + ", zid=" + zid + ", name=" + name + ", sex=" + sex + ", pwd=" + pwd + ", cId=" + cId + '}';
+        return "Teacher{" + "id=" + id + ", zid=" + zid + ", name=" + name + ", sex=" + sex + ", pwd=" + pwd + ", cId=" + cId + ", courseId=" + courseId + '}';
     }
+
+    
 
    
     

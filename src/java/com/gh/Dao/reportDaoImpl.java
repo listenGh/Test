@@ -12,5 +12,10 @@ import model.Report;
  * @author lenovo
  */
 public class reportDaoImpl extends BaseDao<Report>{
+
+    @Override
+    public Report search(String id, String nameOfClass) {
+        return super.search(id, nameOfClass); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

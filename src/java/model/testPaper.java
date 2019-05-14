@@ -18,23 +18,7 @@ public class testPaper {
     String ans;
     int score;
     int flag;
-
-    @Override
-    public String toString() {
-        return "testPaper{" + "id=" + id + ", zid=" + zid + ", tc=" + tc + ", sc=" + sc + ", ans=" + ans + ", score=" + score + ", flag=" + flag + '}';
-    }
-
-    public testPaper() {
-    }
-
-    public testPaper(String zid, String tc, String sc, String ans, int score, int flag) {
-        this.zid = zid;
-        this.tc = tc;
-        this.sc = sc;
-        this.ans = ans;
-        this.score = score;
-        this.flag = flag;
-    }
+    int position;
 
     public int getId() {
         return id;
@@ -92,4 +76,31 @@ public class testPaper {
         this.flag = flag;
     }
 
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public testPaper() {
+    }
+
+    public testPaper(String zid, String tc, String sc, String ans, int score, int flag, int position) {
+        this.zid = zid;
+        this.tc = tc;
+        this.sc = sc;
+        this.ans = ans;
+        this.score = score;
+        this.flag = flag;
+        this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "testPaper{" + "id=" + id + ", zid=" + zid + ", tc=" + tc + ", sc=" + sc + ", ans=" + ans + ", score=" + score + ", flag=" + flag + ", position=" + position + '}';
+    }
+
+    
 }

@@ -5,8 +5,12 @@
  */
 
 import com.gh.Dao.AdminDaoImpl;
+import com.gh.Dao.teacherDaoImpl;
+import com.gh.Dao.testPaperDaoImpl;
 import model.AA;
 import model.Admin;
+import model.Teacher;
+import model.testPaper;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -26,11 +30,11 @@ import static org.junit.Assert.*;
  */
 public class DaoTest {
 
-    private SessionFactory sessionFactory=null;
-    private Configuration configuration=null;
-    private Session session=null;
-    private Transaction transaction=null;
-    
+    private SessionFactory sessionFactory = null;
+    private Configuration configuration = null;
+    private Session session = null;
+    private Transaction transaction = null;
+
     public DaoTest() {
     }
 
@@ -62,13 +66,30 @@ public class DaoTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
+    @Test
     public void hello() {
 //       AA a = new AA();
 //       a.setName("das");
 //       session.save(a);
-        AdminDaoImpl a =new AdminDaoImpl();
-        Admin aa = new Admin("1","123");
-        a.add(aa);
+//        AdminDaoImpl a =new AdminDaoImpl();
+//        Admin aa = new Admin("1","123");
+//        a.add(aa);
+//        teacherDaoImpl t = new teacherDaoImpl();
+//        Teacher tt = t.search("1", "Teacher");
+//        Teacher ttt = new Teacher("1", "2", "2", "1", "1", "1");
+//        if(tt!=null){
+//            ttt.setId(tt.getId());
+//            tt=ttt;
+//            t.update(tt);
+//        }
+//        testPaper t = new testPaper("1", "1", "1", "1", 0, 0, 0);
+        testPaperDaoImpl tt = new testPaperDaoImpl();
+//        tt.add(t);
+        testPaper t3 = tt.search(0, 0);
+        t3.setFlag(1);
+        tt.update(t3);
+//        t3.toString();
+
+//          session.save(t);
     }
 }

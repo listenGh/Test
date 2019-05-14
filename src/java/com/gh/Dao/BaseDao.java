@@ -5,6 +5,8 @@
  */
 package com.gh.Dao;
 
+import java.util.ArrayList;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -22,10 +24,10 @@ import org.hibernate.service.ServiceRegistryBuilder;
  */
 public class BaseDao<T> {
     
-    private SessionFactory sessionFactory=null;
-    private Configuration configuration=null;
-    private Session session=null;
-    private Transaction transaction=null;
+    public SessionFactory sessionFactory=null;
+    public Configuration configuration=null;
+    public Session session=null;
+    public Transaction transaction=null;
     
     public void setUp() {
 //         sessionFactory = null;
@@ -47,26 +49,44 @@ public class BaseDao<T> {
         session.close();
         sessionFactory.close();
     }
-    
+    /*
+    增加对象
+    */
     public void add(T t){
         setUp();
         session.save(t);
         tearDown();
         
     }
-    public void delete(String id){
+    /*
+    删除对象
+    */
+    public void delete(T t){
         setUp();
-        
+        session.delete(t);
         tearDown();
     }
+    /*
+    更新对象
+    */
     public void update(T t){
         setUp();
-        
+        session.update(t);
         tearDown();
     }
-    public void search(String id){
+    /*
+    得到单个对象
+    */
+    public T search(String id,String nameOfClass){
         setUp();
-        
+        String hql = "from "+nameOfClass+" where zid ="+id;
+        Query query = session.createQuery(hql);
+        ArrayList list = (ArrayList) query.list();
+        if(list!=null && list.size()>0){
+            T t = (T) list.get(0);
+            return t;
+        }
         tearDown();
+       return null;
     }
 }

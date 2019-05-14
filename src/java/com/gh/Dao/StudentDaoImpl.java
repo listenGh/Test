@@ -5,12 +5,29 @@
  */
 package com.gh.Dao;
 
+import java.util.ArrayList;
+import model.Admin;
 import model.Student;
+import org.hibernate.Query;
 
 /**
  *
  * @author lenovo
  */
-public class StudentDaoImpl extends BaseDao<Student>{
-    
+public class StudentDaoImpl extends BaseDao<Student> {
+
+    @Override
+    public Student search(String id, String nameOfClass) {
+        setUp();
+        String hql = "from " + nameOfClass + " where zId =" + id;
+        Query query = session.createQuery(hql);
+        ArrayList list = (ArrayList) query.list();
+        if (list != null && list.size() > 0) {
+            Student t = (Student) list.get(0);
+            return t;
+        }
+        tearDown();
+        return null;
+    }
+
 }

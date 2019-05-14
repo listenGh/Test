@@ -63,5 +63,8 @@ Contributor(s):
         <property name="flag" type="int">
             <column name="flag"/>
         </property>
+        <property name="position" type="int">
+            <column name="position"/>
+        </property>
     </class>
 </hibernate-mapping>
