@@ -10,12 +10,31 @@ package model;
  * @author lenovo
  */
 public class Report {
+
     int id;
     String sId;
     String sName;
     String cId;
     String cName;
     int score;
+    String classId;
+
+    @Override
+    public String toString() {
+        return "Report{" + "id=" + id + ", sId=" + sId + ", sName=" + sName + ", cId=" + cId + ", cName=" + cName + ", score=" + score + ", classId=" + classId + '}';
+    }
+
+    public Report() {
+    }
+
+    public Report(String sId, String sName, String cId, String cName, int score, String classId) {
+        this.sId = sId;
+        this.sName = sName;
+        this.cId = cId;
+        this.cName = cName;
+        this.score = score;
+        this.classId = classId;
+    }
 
     public int getId() {
         return id;
@@ -65,21 +84,12 @@ public class Report {
         this.score = score;
     }
 
-    public Report() {
+    public String getClassId() {
+        return classId;
     }
 
-    @Override
-    public String toString() {
-        return "Report{" + "sId=" + sId + ", sName=" + sName + ", cId=" + cId + ", cName=" + cName + ", score=" + score + '}';
+    public void setClassId(String classId) {
+        this.classId = classId;
     }
 
-    public Report(String sId, String sName, String cId, String cName, int score) {
-        this.sId = sId;
-        this.sName = sName;
-        this.cId = cId;
-        this.cName = cName;
-        this.score = score;
-    }
-    
-    
 }

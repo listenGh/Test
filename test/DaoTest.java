@@ -5,10 +5,12 @@
  */
 
 import com.gh.Dao.AdminDaoImpl;
+import com.gh.Dao.reportDaoImpl;
 import com.gh.Dao.teacherDaoImpl;
 import com.gh.Dao.testPaperDaoImpl;
 import model.AA;
 import model.Admin;
+import model.Report;
 import model.Teacher;
 import model.testPaper;
 import org.hibernate.Session;
@@ -83,13 +85,17 @@ public class DaoTest {
 //            t.update(tt);
 //        }
 //        testPaper t = new testPaper("1", "1", "1", "1", 0, 0, 0);
-        testPaperDaoImpl tt = new testPaperDaoImpl();
-//        tt.add(t);
-        testPaper t3 = tt.search(0, 0);
-        t3.setFlag(1);
-        tt.update(t3);
+//        testPaperDaoImpl tt = new testPaperDaoImpl();
+////        tt.add(t);
+//        testPaper t3 = tt.search(0, 0);
+//        t3.setFlag(1);
+//        tt.update(t3);
 //        t3.toString();
 
 //          session.save(t);
+
+            Report r = new Report("1", "1", "1", "1", 0, "1");
+            reportDaoImpl r1  = new reportDaoImpl();
+            r1.add(r);
     }
 }

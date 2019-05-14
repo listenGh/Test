@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import model.Admin;
 import model.Student;
 import org.hibernate.Query;
+import org.hibernate.mapping.List;
 
 /**
  *
@@ -25,6 +26,18 @@ public class StudentDaoImpl extends BaseDao<Student> {
         if (list != null && list.size() > 0) {
             Student t = (Student) list.get(0);
             return t;
+        }
+        tearDown();
+        return null;
+    }
+
+    public ArrayList<Student> searchStudents(String cId) {
+        setUp();
+        String hql = "from " + "Student" + " where cId =" + cId;
+        Query query = session.createQuery(hql);
+        ArrayList list = (ArrayList) query.list();
+        if (list != null && list.size() > 0) {
+            return list;
         }
         tearDown();
         return null;

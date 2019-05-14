@@ -60,5 +60,8 @@ Contributor(s):
         <property name="score" type="int">
             <column name="score"/>
         </property>
+        <property name="classId" type="java.lang.String">
+            <column name="classId"/>
+        </property>
     </class>
 </hibernate-mapping>
