@@ -94,8 +94,10 @@ public class DaoTest {
 
 //          session.save(t);
 
-            Report r = new Report("1", "1", "1", "1", 0, "1");
-            reportDaoImpl r1  = new reportDaoImpl();
-            r1.add(r);
+//            Report r = new Report("1", "1", "1", "1", 0, "1");
+//            reportDaoImpl r1  = new reportDaoImpl();
+//            r1.add(r);
+            testPaperDaoImpl t = new testPaperDaoImpl();
+            t.add(new testPaper("1", "1", "1","1", 0, 0, 0, "1"));
     }
 }

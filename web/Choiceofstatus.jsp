@@ -16,5 +16,11 @@
         <a href="/Test/AdminLogin.jsp" >Admin</a>
         <a href="/Test/StudentLogin.jsp" >Student</a>
         <a href="/Test/TeacherLogin.jsp" >Teacher</a>
+<!--        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <form method="post" action="/Test/set">
+            <input type="submit" value="设置"/>
+        </form>-->
     </body>
+
+    <!---->
 </html>

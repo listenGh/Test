@@ -19,6 +19,26 @@ public class testPaper {
     int score;
     int flag;
     int position;
+    String remarks;
+
+    @Override
+    public String toString() {
+        return "testPaper{" + "id=" + id + ", zid=" + zid + ", tc=" + tc + ", sc=" + sc + ", ans=" + ans + ", score=" + score + ", flag=" + flag + ", position=" + position + ", remarks=" + remarks + '}';
+    }
+
+    public testPaper(String zid, String tc, String sc, String ans, int score, int flag, int position, String remarks) {
+        this.zid = zid;
+        this.tc = tc;
+        this.sc = sc;
+        this.ans = ans;
+        this.score = score;
+        this.flag = flag;
+        this.position = position;
+        this.remarks = remarks;
+    }
+
+    public testPaper() {
+    }
 
     public int getId() {
         return id;
@@ -84,23 +104,15 @@ public class testPaper {
         this.position = position;
     }
 
-    public testPaper() {
+    public String getRemarks() {
+        return remarks;
     }
 
-    public testPaper(String zid, String tc, String sc, String ans, int score, int flag, int position) {
-        this.zid = zid;
-        this.tc = tc;
-        this.sc = sc;
-        this.ans = ans;
-        this.score = score;
-        this.flag = flag;
-        this.position = position;
+    public void setRemarks(String remarks) {
+        this.remarks = remarks;
     }
 
-    @Override
-    public String toString() {
-        return "testPaper{" + "id=" + id + ", zid=" + zid + ", tc=" + tc + ", sc=" + sc + ", ans=" + ans + ", score=" + score + ", flag=" + flag + ", position=" + position + '}';
-    }
+    
 
     
 }

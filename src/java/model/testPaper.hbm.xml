@@ -66,5 +66,8 @@ Contributor(s):
         <property name="position" type="int">
             <column name="position"/>
         </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="remarks"/>
+        </property>
     </class>
 </hibernate-mapping>
