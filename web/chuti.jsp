@@ -266,7 +266,7 @@ $(function () {
         dataBase.questionItems = questionItems;
         //var obj = JSON.parse();
         escape = "false";
-        console.log(JSON.stringify(choices));
+        console.log(JSON.stringify(dataBase));
 
 
         //var ajax = new XMLHttpRequest();

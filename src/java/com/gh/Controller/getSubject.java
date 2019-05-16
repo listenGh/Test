@@ -22,12 +22,14 @@ import net.sf.json.JSONObject;
 /**
  *
  * @author lenovo
- * 
+ *
  * 得到老师出的题
  */
 @WebServlet(name = "getSubject", urlPatterns = {"/getSubject"})
 public class getSubject extends HttpServlet {
-    public static int num=1;
+
+    public static int num = 1;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -108,6 +110,7 @@ public class getSubject extends HttpServlet {
 //        }
         //总题目
         String BigTitle = str[0];
+        BigTitle = BigTitle.substring(1);
         //小题目
         String[] smallTitle = str[1].split(",");
         //每个题目的选项 4个一组
@@ -121,11 +124,11 @@ public class getSubject extends HttpServlet {
         //每份试卷题目必须都为20个，每个题目4个选项，禁止使用‘！’号在编辑题目时候
         for (int i = 0; i < smallTitle.length; i++) {
             testPaper tt = new testPaper();
-            int flag=0;
-            for(int y =0;y<4;y++){
-                if (answer[jjj].equals("true")==true) {
-                flag = (jjj% 4 + 1);
-            }
+            int flag = 0;
+            for (int y = 0; y < 4; y++) {
+                if (answer[jjj].equals("true") == true) {
+                    flag = (jjj % 4 + 1);
+                }
                 jjj++;
             }
             tt.setAns(String.valueOf(flag));
@@ -134,12 +137,16 @@ public class getSubject extends HttpServlet {
             tt.setPosition(i + 1);
             tt.setScore(5);
             tt.setTc(BigTitle);
-            String strChoice="";
-            for(int y=jj;y<jj+4;y++){
-                strChoice += (choices[y] + ",");
-               
+            String strChoice = "";
+            for (int y = jj; y < jj + 4; y++) {
+                if (y == jj + 3) {
+                    strChoice += (choices[y]);
+                } else {
+                    strChoice += (choices[y] + ";");
+                }
+
             }
-            jj+=4;
+            jj += 4;
             tt.setSc(strChoice);
             t.add(tt);
         }

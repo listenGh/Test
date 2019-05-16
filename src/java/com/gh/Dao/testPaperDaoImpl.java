@@ -28,4 +28,13 @@ public class testPaperDaoImpl extends BaseDao<testPaper> {
         tearDown();
         return null;
     }
+    
+    public ArrayList<testPaper> searchTestPapers(int flag) {
+        setUp();
+        String hql = "from " + "testPaper" + " where flag="+String.valueOf(flag);
+        Query query = session.createQuery(hql);
+        ArrayList list = (ArrayList) query.list();
+        tearDown();
+        return list;
+    }
 }
