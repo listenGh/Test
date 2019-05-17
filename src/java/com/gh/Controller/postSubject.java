@@ -21,7 +21,7 @@ import net.sf.json.JSONArray;
 
 /**
  *
- * @author lenovo
+ * @author lenovo 从数据库获取试卷信息
  */
 @WebServlet(name = "postSubject", urlPatterns = {"/postSubject"})
 public class postSubject extends HttpServlet {
@@ -80,6 +80,7 @@ public class postSubject extends HttpServlet {
             throws ServletException, IOException {
         ArrayList<Map> datas = new ArrayList<>();
         int flag = 1;//应该在前台传入
+        //从数据库获取试卷信息
         testPaperDaoImpl t = new testPaperDaoImpl();
         ArrayList<testPaper> dataOftestPaper = t.searchTestPapers(flag);
         for (int i = 0; i < dataOftestPaper.size(); i++) {
@@ -90,27 +91,27 @@ public class postSubject extends HttpServlet {
             m.put("questionItems", tdata.getSc());
             switch (tdata.getAns()) {
                 case "1":
-                    m.put("questionAnswer","a");
+                    m.put("questionAnswer", "A");
                     break;
                 case "2":
-                    m.put("questionAnswer","b");
+                    m.put("questionAnswer", "B");
                     break;
                 case "3":
-                    m.put("questionAnswer","c");
+                    m.put("questionAnswer", "C");
                     break;
                 case "4":
-                    m.put("questionAnswer","d");
+                    m.put("questionAnswer", "D");
                     break;
 
             }
-            
+
             datas.add(m);
-            
+
         }
-         JSONArray ja = JSONArray.fromObject(datas);
-         System.out.println(ja.toString());
-         response.setCharacterEncoding("UTF-8");
-         response.getWriter().print(ja);
+        JSONArray ja = JSONArray.fromObject(datas);
+        System.out.println(ja.toString());
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().print(ja);
     }
 
     /**

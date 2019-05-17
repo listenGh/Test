@@ -8,12 +8,14 @@ package model;
 /**
  *
  * @author lenovo
+ * 
+ * 班级信息
  */
 public class Clas {
-    int id;
-    String zid;
-    String name;
-    String remarks;
+    int id;  //不会用到这个属性
+    String zid;  //Clas的Id
+    String name;//名字
+    String remarks;//不会用到
 
     public String getZid() {
         return zid;

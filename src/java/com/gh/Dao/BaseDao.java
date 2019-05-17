@@ -30,12 +30,6 @@ public class BaseDao<T> {
     public Transaction transaction=null;
     
     public void setUp() {
-//         sessionFactory = null;
-//         configuration = new Configuration().configure();
-//         ServiceRegistry serviceRegistry = configuration.getStandardServiceRegistryBuilder().build();
-//         sessionFactory = new MetadataSources(serviceRegistry).buildMetadata().buildSessionFactory();
-//         session = sessionFactory.openSession();
-//         transaction = session.beginTransaction();
          sessionFactory = null;
          configuration = new Configuration().configure();
          ServiceRegistry serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).build();

@@ -82,32 +82,11 @@ public class getSubject extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        int num = (int) request.getSession().getAttribute("number");
-//        num++;
-//        request.getSession().setAttribute("number", num);
-//            Cookie[] c = request.getCookies();
-//            int num=0;
-//            for(int i=0;i<c.length;i++){
-//                if(c[i].getName().equals("number")){
-//                    num = Integer.parseInt(c[i].getValue());
-//                    System.out.println("!!!!!!!!!!!!!!!!+++++++++++++++++++++++============="+num);
-//                    num++;
-//                    c[i].setValue(String.valueOf(num));
-//                    response.addCookie(c[i]);
-//                    break;
-//                }
-//            }
-//        String number = request.getServletContext().getInitParameter("number");
-//        int num = Integer.parseInt(number);
-//        num++;
-//        request.getServletContext().setInitParameter("number", String.valueOf(num));
-//        request.getServletContext().setAttribute("number", number);
+        //获取前端发过来的数据
         String json = readJSONString(request);
         System.out.println(json);
         String[] str = json.split("!!!");
-//        for(int i=0;i<str.length;i++){
-//            System.out.println(str[i]);
-//        }
+        
         //总题目
         String BigTitle = str[0];
         BigTitle = BigTitle.substring(1);
@@ -133,10 +112,9 @@ public class getSubject extends HttpServlet {
             }
             tt.setAns(String.valueOf(flag));
             tt.setFlag(num);
-//            (int)request.getServletContext().getAttribute("number")
             tt.setPosition(i + 1);
             tt.setScore(5);
-            tt.setTc(BigTitle);
+            tt.setTc(smallTitle[i]);
             String strChoice = "";
             for (int y = jj; y < jj + 4; y++) {
                 if (y == jj + 3) {

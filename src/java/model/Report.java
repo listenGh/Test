@@ -8,16 +8,18 @@ package model;
 /**
  *
  * @author lenovo
+ * 
+ * 成绩单信息
  */
 public class Report {
 
-    int id;
-    String sId;
-    String sName;
-    String cId;
-    String cName;
-    int score;
-    String classId;
+    int id;//不会用到这个属性
+    String sId;  //学生的Id
+    String sName;//学生的姓名
+    String cId;//课程Id
+    String cName;//课程Name
+    int score;//对应课程的分数
+    String classId;//学生所属班级
 
     @Override
     public String toString() {

@@ -8,11 +8,14 @@ package model;
 /**
  *
  * @author lenovo
+ * 
+ * 管理员信息
  */
 public class Admin {
-    int id;
-    String zId;
-    String pwd;
+
+    int id;     //不会用到这个属性
+    String zId; //Admin的Id
+    String pwd; //密码
 
     public String getzId() {
         return zId;
@@ -21,7 +24,6 @@ public class Admin {
     public void setzId(String zId) {
         this.zId = zId;
     }
-    
 
     public int getId() {
         return id;
@@ -30,8 +32,6 @@ public class Admin {
     public void setId(int id) {
         this.id = id;
     }
-
-   
 
     public String getPwd() {
         return pwd;
@@ -49,12 +49,9 @@ public class Admin {
         return "Admin{" + "id=" + id + ", pwd=" + pwd + ", zId=" + zId + '}';
     }
 
-    
     public Admin(String zId, String pwd) {
         this.pwd = pwd;
         this.zId = zId;
     }
 
-    
-    
 }

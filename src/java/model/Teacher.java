@@ -8,15 +8,17 @@ package model;
 /**
  *
  * @author lenovo
+ * 
+ * 教师信息
  */
 public class Teacher {
-    int id;
-    String zid;
-    String name;
-    String sex;
-    String pwd;
-    String cId;
-    String courseId;
+    int id;//不会用到这个属性
+    String zid;//教师的Id
+    String name;//教师名字
+    String sex;//教师性别
+    String pwd;//密码
+    String cId;//所属班级
+    String courseId;//所教课程的Id
 
     public Teacher() {
     }

@@ -76,12 +76,6 @@
                                 <h4 class="exam-item-title">常用题型<i class="icon-expand"></i></h4>
                                 <ul class="exam-nav-list" id="ui_sortable_exam">
                                     <li data-uid="1" data-tempId="drag_choice"> <a href="javascript:;" data-checkType="1"><i class="icon-singleChoice"></i>单选题</a> </li>
-                                    <!--              <li data-uid="2" data-tempId="drag_choice"> <a href="javascript:;" data-checkType="2"><i class="icon-multipleChoice"></i>多选题</a> </li>
-                                                  <li data-uid="3" data-tempId="drag_choice"> <a href="javascript:;" data-checkType="1"><i class="icon-picChoice"></i>图片单选</a> </li>
-                                                  <li data-uid="4" data-tempId="drag_choice"> <a href="javascript:;" data-checkType="2"><i class="icon-picsChoice"></i>图片多选</a> </li>
-                                                  <li data-uid="5" data-tempId="drag_completion"> <a href="javascript:;" data-checkType="1"><i class="icon-gapFilling"></i>单行填空</a> </li>
-                                                  <li data-uid="6" data-tempId="drag_completion"> <a href="javascript:;" data-checkType="2"><i class="icon-multiRow"></i>多行填空</a> </li>
-                                                  <li data-uid="7" data-tempId="drag_describe"> <a href="javascript:;"><i class="icon-describe"></i>描述说明</a> </li>-->
                                 </ul>
                             </div>
                         </div>
@@ -286,13 +280,6 @@ $(function () {
                     //                        data:JSON.stringify(),
                     dataType: "json",
                     contentType: "application/json;charset=utf-8",
-                    //                        success : function(data){
-                    //                            alert(data);
-                    //                              alert(data.name);
-                    //                              
-                    //                               
-                    //                                alert(data.password);
-                    //                        }
                 }
 
         );

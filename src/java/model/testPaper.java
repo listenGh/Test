@@ -8,18 +8,21 @@ package model;
 /**
  *
  * @author lenovo
+ * 
+ * 单个题目的信息
+ * 
  */
 public class testPaper {
 
-    int id;
-    String zid;
-    String tc;
-    String sc;
-    String ans;
-    int score;
-    int flag;
-    int position;
-    String remarks;
+    int id;//不会用到这个属性
+    String zid;//不会用到这个属性
+    String tc;//单个题目的题头
+    String sc;//4个选项内容
+    String ans;//本题答案
+    int score;//这个题目的分数
+    int flag; //用于标记这是出的第几分试卷
+    int position;//在一张试卷中这个题目的位置
+    String remarks;//不会用到这个属性
 
     @Override
     public String toString() {

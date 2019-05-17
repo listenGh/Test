@@ -8,14 +8,16 @@ package model;
 /**
  *
  * @author lenovo
+ * 
+ * 学生信息
  */
 public class Student {
-    int id;
-    String zid;
-    String name;
-    String sex;
-    String cId;
-    String pwd;
+    int id;//不会用到这个属性
+    String zid;//学生Id
+    String name;//名字
+    String sex;//性别
+    String cId;//所属班级的Id
+    String pwd;//密码
 
     public int getId() {
         return id;
