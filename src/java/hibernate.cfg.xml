@@ -58,7 +58,7 @@ Contributor(s):
     <mapping resource="com.gh.model/Student.hbm.xml"/>
     <mapping resource="com.gh.model/Student.hbm.xml"/>
     <mapping resource="model/Student.hbm.xml"/>-->
-    <mapping resource="model/AA.hbm.xml"/>
+    <!--<mapping resource="model/AA.hbm.xml"/>-->
     <mapping resource="model/Admin.hbm.xml"/>
     <mapping resource="model/class.hbm.xml"/>
     <mapping resource="model/course.hbm.xml"/>

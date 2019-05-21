@@ -5,8 +5,8 @@
  */
 package com.gh.Controller;
 
-import com.gh.Service.AdminServiceImpl;
-import com.gh.Service.LoginCheck;
+import com.gh.Dao.teacherDaoImpl;
+import com.gh.Service.TeacherServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,17 +14,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Admin;
-import model.Student;
 import model.Teacher;
 
 /**
  *
  * @author lenovo
  */
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+@WebServlet(name = "ChangeTeacherInfo", urlPatterns = {"/ChangeTeacherInfo"})
+public class ChangeTeacherInfo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,10 +40,10 @@ public class Login extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Login</title>");
+            out.println("<title>Servlet ChangeTeacherInfo</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Login at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ChangeTeacherInfo at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -78,38 +75,19 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String identity = (String) request.getSession().getAttribute("identity");
-        String zid = request.getParameter("name");
-        String pwd = request.getParameter("pwd");
-        LoginCheck l = new LoginCheck();
-        if (identity.equals("Admin")) {
-            Admin a = new Admin(zid, pwd);
-            if(l.checkAdmin(a)){
-               //跳转到Admin的操作界面
-               request.setAttribute("adminId", zid);
-               response.sendRedirect("/Test/OPAdmin.jsp");
-            }
-        } else if (identity.equals("Student")) {
-            Student s = new Student();
-            s.setPwd(pwd);
-            s.setZid(zid);
-            if(l.checkStudent(s)){
-                //跳转到Student的操作界面
-                request.getSession().setAttribute("sId", zid);
-                response.sendRedirect("/Test/OperatingPageOfStudent.jsp");
-            }
-        } else {
-            Teacher t = new Teacher();
-            t.setPwd(pwd);
-            t.setZid(zid);
-            if(l.checkTeacher(t)){
-                //跳转到Teacher的操作界面
-                request.getSession().setAttribute("TeacherId", zid);
-                response.sendRedirect("/Test/OPTeacher.jsp");
-            }
-        }
-
-//        System.out.println();
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        Teacher t = new Teacher();
+        t.setZid((String) request.getSession().getAttribute("TeacherId"));
+        t.setCourseId(request.getParameter("courseId"));
+        t.setName(request.getParameter("name"));
+        t.setPwd(request.getParameter("pwd"));
+        t.setSex(request.getParameter("sex"));
+        t.setcId(request.getParameter("cId"));
+        TeacherServiceImpl t2 = new TeacherServiceImpl();
+        t2.updateTeacher(t);
+        request.getRequestDispatcher("Choiceofstatus.jsp").forward(request, response);
+//        request.getRequestDispatcher("ChangeTeacher.jsp").forward(request, response);
     }
 
     /**

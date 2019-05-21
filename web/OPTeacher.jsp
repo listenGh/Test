@@ -25,15 +25,18 @@
         %>
         <div class="jq22-sidebar">
             <ul>
-                <li><span class="fa fa-arrow-right"></span> <a href="dati.jsp">进行考试</a></li>
-                <li><span class="fa fa-arrow-right"></span> <a href="CheckScore.jsp" >查看成绩</a></li>
-                <li><span class="fa fa-arrow-right"></span> <a href="Choiceofstatus.jsp" >退出</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="ChangeTeacher.jsp">修改密码或个人信息</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="LookStudents.jsp" >查看多/单个学生信息</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="dati.jsp">上传成绩</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="changeGrade.jsp">修改成绩</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="searchGrade.jsp">查看单个学生成绩</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="Choiceofstatus.jsp">退出</a></li>
                 <%--<%=sId%>--%>
             </ul>
         </div> 
         <div class="jq22-container">
             <header class="jq22-header bgcolor-1">
-                <h1>欢迎来到学生界面</h1>
+                <h1>欢迎来到教师界面</h1>
                 <br><br>
                 <h1>请根据左侧操作栏中的操作选项进行操作</h1>
                 <br><br>
