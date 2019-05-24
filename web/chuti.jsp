@@ -283,6 +283,7 @@ $(function () {
                 }
 
         );
+        window.location.replace("http://localhost:8080/Test/OPTeacher.jsp");
         //            var obj = eval('('+JSON.stringify(dataBase)+')');
 
         //            console.log(obj);

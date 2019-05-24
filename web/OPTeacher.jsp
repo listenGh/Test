@@ -27,9 +27,10 @@
             <ul>
                 <li><span class="fa fa-arrow-right"></span> <a href="ChangeTeacher.jsp">修改密码或个人信息</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="LookStudents.jsp" >查看多/单个学生信息</a></li>
-                <li><span class="fa fa-arrow-right"></span> <a href="dati.jsp">上传成绩</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="addReport.jsp">上传成绩</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="changeGrade.jsp">修改成绩</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="searchGrade.jsp">查看单个学生成绩</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="chutiChoice.jsp">试卷题目相关操作</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="Choiceofstatus.jsp">退出</a></li>
                 <%--<%=sId%>--%>
             </ul>

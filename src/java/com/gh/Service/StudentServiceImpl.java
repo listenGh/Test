@@ -5,8 +5,10 @@
  */
 package com.gh.Service;
 
+import com.gh.Dao.AdminDaoImpl;
 import com.gh.Dao.StudentDaoImpl;
 import com.gh.Dao.reportDaoImpl;
+import model.Admin;
 import model.Report;
 import model.Student;
 
@@ -41,14 +43,17 @@ public class StudentServiceImpl {
     /*
     修改个人密码
      */
-    public void updatePwd(Student s) {
-        StudentDaoImpl ss = new StudentDaoImpl();
-        Student s2 = ss.search(s.getZid(), "Student");
-        if (s2 != null) {
-            s.setId(s2.getId());
-            s2 = s;
-            ss.update(s2);
+    public boolean updatePwd(String zid, String oldPwd, String newPwd) {
+       boolean flag = true;
+        StudentDaoImpl t = new StudentDaoImpl();
+        Student a = t.search(zid, "Student");
+        if (a != null && a.getPwd().equals(oldPwd)) {
+            a.setPwd(newPwd);
+            t.update(a);
+        } else {
+            flag = false;
         }
+        return flag;
     }
 
     /*

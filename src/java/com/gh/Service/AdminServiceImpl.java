@@ -12,6 +12,7 @@ import com.gh.Dao.classDaoImpl;
 import com.gh.Dao.reportDaoImpl;
 import com.gh.Dao.teacherDaoImpl;
 import com.gh.Dao.testPaperDaoImpl;
+import java.util.ArrayList;
 import model.Admin;
 import model.Clas;
 import model.Course;
@@ -70,12 +71,19 @@ public class AdminServiceImpl {
      */
     public Teacher getTeacher(Teacher ttt) {
         teacherDaoImpl t = new teacherDaoImpl();
-        Teacher tt = t.search(ttt.getZid(), "Teacehr");
+        Teacher tt = t.search(ttt.getZid(), "Teacher");
         if (tt != null) {
             return tt;
         } else {
             return null;
         }
+    }
+    /*
+    查看教师们信息
+     */
+    public ArrayList<Teacher> getTeachers() {
+        teacherDaoImpl t = new teacherDaoImpl();
+        return t.searchTeachers("Teacher");
     }
 
     /*
@@ -119,6 +127,13 @@ public class AdminServiceImpl {
         classDaoImpl c = new classDaoImpl();
         Clas clas = c.search(t.getZid(), "Clas");
         return clas;
+    }
+    /*
+    查看班级们信息
+     */
+    public ArrayList<Clas> searchClasses() {
+        classDaoImpl c = new classDaoImpl();
+        return c.getClasses();
     }
 //----------------------------------------学生服务部分------------------------------------------------
 
@@ -230,6 +245,14 @@ public class AdminServiceImpl {
         CourseDaoImpl c2 = new CourseDaoImpl();
         Course course = c2.search(c.getZid(), "Course");
         return course;
+    }
+    
+    /*
+    查看所有课程
+     */
+    public ArrayList<Course> searCourses() {
+        CourseDaoImpl c2 = new CourseDaoImpl();
+        return c2.getClasses();
     }
 //----------------------------------------考试列表部分管理服务部分------------------------------------------------
 

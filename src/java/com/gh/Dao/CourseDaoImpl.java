@@ -5,12 +5,23 @@
  */
 package com.gh.Dao;
 
+import java.util.ArrayList;
+import model.Clas;
 import model.Course;
+import org.hibernate.Query;
 
 /**
  *
  * @author lenovo
  */
-public class CourseDaoImpl extends BaseDao<Course>{
-    
+public class CourseDaoImpl extends BaseDao<Course> {
+
+    public ArrayList<Course> getClasses() {
+        setUp();
+        String hql = "from " + "Course";
+        Query query = session.createQuery(hql);
+        ArrayList list = (ArrayList) query.list();
+        tearDown();
+        return list;
+    }
 }

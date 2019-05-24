@@ -29,5 +29,14 @@ public class teacherDaoImpl extends BaseDao<Teacher> {
         tearDown();
         return null;
     }
+    
+    public ArrayList<Teacher> searchTeachers(String nameOfClass) {
+        setUp();
+        String hql = "from " + nameOfClass;
+        Query query = session.createQuery(hql);
+        ArrayList list = (ArrayList) query.list();
+        tearDown();
+        return list;
+    }
 
 }

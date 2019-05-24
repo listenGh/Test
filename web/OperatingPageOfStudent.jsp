@@ -25,7 +25,9 @@
         %>
         <div class="jq22-sidebar">
             <ul>
-                <li><span class="fa fa-arrow-right"></span> <a href="dati.jsp">进行考试</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="updateStudent2.jsp">基本信息修改</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="updatepwd.jsp">修改密码</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="test.jsp">进行考试</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="CheckScore.jsp" >查看成绩</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="Choiceofstatus.jsp" >退出</a></li>
                 <%--<%=sId%>--%>

@@ -86,7 +86,7 @@ public class Login extends HttpServlet {
             Admin a = new Admin(zid, pwd);
             if(l.checkAdmin(a)){
                //跳转到Admin的操作界面
-               request.setAttribute("adminId", zid);
+               request.getSession().setAttribute("adminId", zid);
                response.sendRedirect("/Test/OPAdmin.jsp");
             }
         } else if (identity.equals("Student")) {

@@ -8,10 +8,11 @@ package model;
 /**
  *
  * @author lenovo
- * 
+ *
  * 学生信息
  */
 public class Student {
+
     int id;//不会用到这个属性
     String zid;//学生Id
     String name;//名字
@@ -83,7 +84,4 @@ public class Student {
         return "Student{" + "id=" + id + ", zid=" + zid + ", name=" + name + ", sex=" + sex + ", cId=" + cId + ", pwd=" + pwd + '}';
     }
 
-    
-
-    
 }

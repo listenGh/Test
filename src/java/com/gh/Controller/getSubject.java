@@ -82,6 +82,7 @@ public class getSubject extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.getSession().setAttribute("havetest",true);
         //获取前端发过来的数据
         String json = readJSONString(request);
         System.out.println(json);
@@ -129,6 +130,8 @@ public class getSubject extends HttpServlet {
             t.add(tt);
         }
         num++;
+        request.getSession().setAttribute("havetest","true");
+//        request.getRequestDispatcher("OPTeacher.jsp").forward(request, response);
     }
 
     /**

@@ -63,8 +63,9 @@ public class TeacherServiceImpl {
     /*
     上传成绩
      */
-    public void submitGrade() {
-
+    public void submitGrade(Report r) {
+        reportDaoImpl rr = new reportDaoImpl();
+        rr.add(r);
     }
 
     /*

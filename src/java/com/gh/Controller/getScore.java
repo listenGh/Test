@@ -87,15 +87,17 @@ public class getScore extends HttpServlet {
         //score,sId
         
         //录入成绩
+        String zid = (String)request.getSession().getAttribute("sId");
         System.out.println(str[0]);
         str[0] = str[0].substring(1);
         System.out.println(str[1]);
         str[1] = str[1].substring(0,str[1].length()-1);
         StudentDaoImpl s = new StudentDaoImpl();
-        Student s1 = s.search(str[1], "Student");
+        Student s1 = s.search(zid, "Student");
         reportDaoImpl r = new reportDaoImpl();
         //先假设每次录入的成绩都为英语
-        r.add(new Report(str[1],s1.getName(), "1", "英语", Integer.parseInt(str[0]),s1.getcId()));
+        r.add(new Report(zid,s1.getName(), "1", "英语", Integer.parseInt(str[0]),s1.getcId()));
+        request.getSession().setAttribute("cantest", "false");
     }
 
     /**

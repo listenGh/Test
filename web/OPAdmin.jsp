@@ -41,7 +41,7 @@
                 <li><span class="fa fa-arrow-right"></span> <a href="updateCourse.jsp">修改课程信息</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="searchCourse.jsp">查看课程信息</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="deleteCourse.jsp">删除课程信息</a></li>
-                <li><span class="fa fa-arrow-right"></span> <a href="guanliTest.jsp">管理考试</a></li>
+                <li><span class="fa fa-arrow-right"></span> <a href="allowTest.jsp">批准考试</a></li>
                 <li><span class="fa fa-arrow-right"></span> <a href="Choiceofstatus.jsp">退出</a></li>
                 <%--<%=sId%>--%>
             </ul>
